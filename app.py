@@ -74,42 +74,44 @@ def load_model_info():
 def load_feature_ranges():
     """Load feature ranges for sliders"""
     try:
-       with open('models/feature_ranges.json', 'r') as f:
-        return json.load(f)
+        with open('models/feature_ranges.json', 'r') as f:
+            return json.load(f)
     except:
 # Default ranges if file doesn't exist
-     return {
+        return {
         'sepal_length': {'min': 4.0, 'max': 8.0, 'default': 5.8},
         'sepal_width': {'min': 2.0, 'max': 4.5, 'default': 3.0},
         'petal_length': {'min': 1.0, 'max': 7.0, 'default': 4.0},
         'petal_width': {'min': 0.1, 'max': 2.5, 'default': 1.2}
-}   
+        }   
+    
 # Load data
 model_info = load_model_info()
 feature_ranges = load_feature_ranges()
-st.write(feature_ranges)
+#st.write(feature_ranges)
 model = load_model('joblib') # Default to joblib
+
 # Sidebar
 with st.sidebar:
-  st.title("⚙️ Settings")
-# Model format selection
-  model_format = st.radio(
-     "Model Format",
-     ["joblib", "pickle"],
-     help="Choose which serialized model format to use for predictions"
-)
- # Reload model button
-if st.button("🔄 Reload Model"):
-   model = load_model(model_format)
-if model:
-   st.success(f"Model loaded from {model_format} format!")
-st.divider()  
-# Quick actions
-st.subheader("🚀 Quick Actions")
-if st.button("📊 Show Dataset Info"):
-  st.session_state.show_dataset_info = True
-if st.button("🎯 Make Prediction"):
-  st.session_state.make_prediction = True
+    st.title("⚙️ Settings")
+    # Model format selection
+    model_format = st.radio(
+        "Model Format",
+        ["joblib", "pickle"],
+        help="Choose which serialized model format to use for predictions"
+    )
+    # Reload model button
+    if st.button("🔄 Reload Model"):
+        model = load_model(model_format)
+    if model:
+        st.success(f"Model loaded from {model_format} format!")
+        st.divider()  
+        # Quick actions
+        st.subheader("🚀 Quick Actions")
+    if st.button("📊 Show Dataset Info"):
+        st.session_state.show_dataset_info = True
+    if st.button("🎯 Make Prediction"):
+        st.session_state.make_prediction = True
 # Main content
 st.markdown('<h1 class="main-header">🌸 Iris Flower Classification</h1>', unsafe_allow_html=True)
 # Description
@@ -120,9 +122,9 @@ Adjust the sliders below to input the flower's characteristics and see the predi
 # Create input form
 col1, col2 = st.columns([2, 1])
 with col1:
-  st.header("📝 Input Features")
+    st.header("📝 Input Features")
   # Create sliders based on feature ranges
-sepal_length = st.slider(
+    sepal_length = st.slider(
     "**Sepal Length (cm)**",
     min_value=float(feature_ranges['sepal length (cm)'][0]),
     max_value=float(feature_ranges['sepal length (cm)'][1]),
