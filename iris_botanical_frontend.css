@@ -1,0 +1,115 @@
+.section-heading {
+    color: #294637;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: .25rem;
+}
+
+.muted {
+    color: #7c887e;
+    font-size: .87rem;
+}
+
+.value-card {
+    background: #f4f7f1;
+    border: 1px solid #e5ecdf;
+    border-radius: 12px;
+    padding: .8rem .9rem;
+    margin-bottom: .65rem;
+}
+
+.value-label {
+    color: #7b887c;
+    font-size: .74rem;
+    font-weight: 600;
+}
+
+.value-number {
+    color: #294637;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.result-wrap {
+    background: #fff;
+    border: 1px solid #e4e9df;
+    border-radius: 20px;
+    padding: 1.4rem;
+    box-shadow: 0 8px 25px rgba(43, 58, 45, .06);
+    margin-top: 1.1rem;
+}
+
+.result-title {
+    color: #244b38;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: .15rem 0 .6rem;
+}
+
+.result-label {
+    color: #77917b;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+}
+
+.flower-frame {
+    background: #f2f6ef;
+    border: 1px solid #e2eadf;
+    border-radius: 16px;
+    padding: .6rem;
+}
+
+.confidence-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #405747;
+    font-weight: 600;
+    font-size: .88rem;
+    margin: .9rem 0 .25rem;
+}
+
+div.stButton > button {
+    border-radius: 10px;
+    min-height: 2.75rem;
+    font-weight: 700;
+}
+
+div.stButton > button[kind="primary"] {
+    background: #386b50;
+    color: white;
+    border: 1px solid #386b50;
+}
+
+div.stButton > button[kind="primary"]:hover {
+    background: #28563e;
+    color: white;
+    border: 1px solid #28563e;
+}
+
+[data-testid="stSidebar"] {
+    background: #eef2e9;
+    border-right: 1px solid #e0e7dc;
+}
+
+[data-testid="stSlider"] label {
+    color: #355640;
+    font-weight: 600;
+}
+
+div[data-testid="stExpander"] {
+    background: white;
+    border: 1px solid #e5e8df;
+    border-radius: 12px;
+}
+
+hr {
+    border-color: #e4e8df;
+}
+
+footer {
+    visibility: hidden;
+}
